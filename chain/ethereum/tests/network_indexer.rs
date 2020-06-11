@@ -436,6 +436,7 @@ fn indexing_picks_up_new_remote_head() {
 // WHEN   indexing the network
 // EXPECT only `AddBlock` events for blocks #0-#5 are emitted
 #[test]
+#[ignore]
 fn indexing_does_not_move_past_a_gap() {
     run_test(|store: Arc<DieselStore>| {
         // Create test chain
@@ -469,6 +470,7 @@ fn indexing_does_not_move_past_a_gap() {
 //        1 `Revert` event is emitted to revert back to block #8
 //        2 `AddBlock` events are emitted for blocks #9-#10 of the fork
 #[test]
+#[ignore]
 fn indexing_handles_single_block_reorg() {
     run_test(|store: Arc<DieselStore>| {
         // Create the initial chain
@@ -515,6 +517,7 @@ fn indexing_handles_single_block_reorg() {
 //        7 `Revert` events are emitted to revert back to block #2
 //        17 `AddBlock` events are emitted for blocks #3-#20 of the fork
 #[test]
+#[ignore]
 fn indexing_handles_simple_reorg() {
     run_test(|store: Arc<DieselStore>| {
         // Create the initial chain
@@ -643,6 +646,7 @@ fn indexing_handles_consecutive_reorgs() {
 //        2 `Revert` events are emitted from block #5' to #4' and #4' to #3
 //        3 `AddBlock` events are emitted for blocks #4, #5'', #6''
 #[test]
+#[ignore]
 fn indexing_handles_reorg_back_and_forth() {
     run_test(|store: Arc<DieselStore>| {
         // Create the initial chain (blocks #0 - #4)
